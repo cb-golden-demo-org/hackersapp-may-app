@@ -19,7 +19,7 @@ metadata:
     - name: hackersapp-may-prod
       jobs:
         - hackersapp-may-prod
-    - name: DR
+    - name: DR2
       jobs:
         - job
 jobs:
