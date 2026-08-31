@@ -17,7 +17,6 @@ metadata:
         - quality-checks
         - update-jira-tickets
         - approval
-        - approval2
     - name: Quality Assurance
       jobs:
         - deploy-to-qa
