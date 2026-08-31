@@ -272,10 +272,12 @@ jobs:
   approval:
     needs: update-jira-tickets
     timeout-minutes: 60
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       instructions: ""
       disallowLaunchByUser: false
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+      notifyAllEligibleUsers: false
+      approvers: cbpov1_approver
   deploy-to-qa:
     needs: approval2
     uses: cb-golden-demo-org/hackersapp-may-app/.cloudbees/workflows/deployer.yaml
@@ -1043,12 +1045,3 @@ jobs:
 
             ✅ Flag configuration update successful
           format: MARKDOWN
-  approval2:
-    needs:
-      - approval
-    timeout-minutes: 4320
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
-    with:
-      disallowLaunchByUser: false
-      notifyAllEligibleUsers: false
-      approvers: cbpov1_approver
