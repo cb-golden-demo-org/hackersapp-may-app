@@ -278,7 +278,7 @@ jobs:
       notifyAllEligibleUsers: false
       approvers: cbpov1_approver
   deploy-to-qa:
-    needs: approval2
+    needs: approval
     uses: cb-golden-demo-org/hackersapp-may-app/.cloudbees/workflows/deployer.yaml
     with:
       manifest: ${{ inputs.manifest }}
